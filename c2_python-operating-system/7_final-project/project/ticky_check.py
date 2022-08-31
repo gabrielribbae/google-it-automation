@@ -1,8 +1,10 @@
+#!/usr/bin/env python
+
 import sys, os, re, csv, operator
 
 def filter_ticky_logs():
   dict = []
-  with open("test.txt", 'r') as syslog_file:
+  with open("syslog.log", 'r') as syslog_file:
     for line in syslog_file:
       result = re.search(r"ticky: (\w+): ([\w\s]+).+\((\w+)\)$", line)
       if result is not None:
